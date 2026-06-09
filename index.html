@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSIGHT • Magazine de Notícias</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER / NAV -->
+    <header>
+        <nav class="container">
+            <div class="nav-left">
+                <div class="logo">INSIGHT</div>
+                <ul class="nav-links" id="nav-menu">
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Mundo</a></li>
+                    <li><a href="#">Tecnologia</a></li>
+                    <li><a href="#">Economia</a></li>
+                    <li><a href="#">Sobre</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav-right">
+                <!-- Dark Mode Toggle -->
+                <button id="dark-mode-toggle" class="theme-toggle" aria-label="Alternar tema">
+                    <span id="theme-icon">🌙</span>
+                </button>
+                
+                <!-- Hamburger -->
+                <button id="hamburger" class="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO / DESTAQUE PRINCIPAL -->
+    <section class="hero">
+        <img src="https://picsum.photos/id/1018/1920/1080" alt="Inteligência Artificial transformando o mercado de trabalho" class="hero-image">
+        <div class="hero-content container">
+            <span class="category-badge">Tecnologia</span>
+            <h1>Inteligência Artificial Transforma o Mercado de Trabalho em 2026</h1>
+            <p>Com o avanço da IA generativa, milhões de novas oportunidades surgem, enquanto profissões tradicionais se adaptam ou desaparecem.</p>
+            <button class="btn-primary" onclick="openModalById(1)">
+                Ler artigo completo →
+            </button>
+        </div>
+    </section>
+
+    <!-- FEED DE NOTÍCIAS -->
+    <main class="container">
+        <div class="section-header">
+            <h2>Últimas Notícias</h2>
+            
+            <!-- Filtros e Busca -->
+            <div class="filters-wrapper">
+                <!-- Categorias -->
+                <div class="category-filters" id="category-filters">
+                    <button class="filter-btn active" data-category="Todas">Todas</button>
+                    <button class="filter-btn" data-category="Tecnologia">Tecnologia</button>
+                    <button class="filter-btn" data-category="Política">Política</button>
+                    <button class="filter-btn" data-category="Economia">Economia</button>
+                    <button class="filter-btn" data-category="Esportes">Esportes</button>
+                    <button class="filter-btn" data-category="Cultura">Cultura</button>
+                    <button class="filter-btn" data-category="Ciência">Ciência</button>
+                </div>
+                
+                <!-- Busca -->
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Buscar notícias...">
+                </div>
+            </div>
+        </div>
+
+        <!-- Grid de Notícias (renderizado via JS) -->
+        <div id="news-grid" class="news-grid"></div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="logo">INSIGHT</div>
+                    <p>Jornalismo de qualidade desde 2018</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacidade</a>
+                    <a href="#">Termos</a>
+                    <a href="#">Contato</a>
+                </div>
+            </div>
+            <p class="copyright">© 2026 INSIGHT Magazine. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL DE LEITURA -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modal-image" alt="">
+            <span id="modal-category" class="category-badge"></span>
+            <h2 id="modal-title"></h2>
+            <div id="modal-meta" class="meta"></div>
+            <div id="modal-full-content" class="full-content"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
